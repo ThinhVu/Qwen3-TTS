@@ -41,16 +41,16 @@ venv\Scripts\activate
 pip install uv
 ```
 
-### 4. Install PyTorch with CUDA 12.8
-
-```bash
-uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu128
-```
-
-### 5. Install dependencies
+### 4. Install dependencies
 
 ```bash
 uv pip install -r requirements.txt
+```
+
+### 5. Install PyTorch with CUDA 12.8
+
+```bash
+uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 
 ### 6. Install Triton for Windows
@@ -122,3 +122,4 @@ Aiden, Dylan, Eric, Ono_anna, Ryan, Serena, Sohee, Uncle_fu, Vivian
 ## 📄 License
 
 This project uses models from Alibaba's Qwen team. Please refer to the original [Qwen3-TTS repository](https://github.com/QwenLM/Qwen3-TTS) for model licensing information.
+
