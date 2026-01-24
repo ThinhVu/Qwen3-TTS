@@ -71,10 +71,13 @@ def transcribe_audio(audio):
     
     try:
         sr, wav = audio
-        # Convert to float32 and normalize
+        # Convert to float32 and normalize properly
         wav = wav.astype(np.float32)
-        if wav.max() > 1.0:
-            wav = wav / 32768.0
+        
+        # Check if audio needs normalization (int16 range is -32768 to 32767)
+        max_val = np.abs(wav).max()
+        if max_val > 1.0:
+            wav = wav / max_val  # Normalize to [-1, 1] range
         
         # Whisper expects 16kHz mono
         if len(wav.shape) > 1:
