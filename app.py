@@ -10,10 +10,7 @@ warnings.filterwarnings("ignore", message=".*Trying to convert audio automatical
 warnings.filterwarnings("ignore", message=".*pad_token_id.*")
 warnings.filterwarnings("ignore", message=".*Setting `pad_token_id`.*")
 
-# Only attempt flash-attn install on Linux (HF Spaces)
-if sys.platform == "linux":
-    import subprocess
-    subprocess.run('pip install flash-attn --no-build-isolation', env={'FLASH_ATTENTION_SKIP_CUDA_BUILD': "TRUE"}, shell=True)
+# Flash-attn is installed via torch.js during Pinokio install - no runtime install needed
 
 import gradio as gr
 import numpy as np
