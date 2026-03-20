@@ -577,7 +577,7 @@ def build_ui():
     }
     """
 
-    with gr.Blocks(title="Qwen3-TTS Demo", theme) as demo:
+    with gr.Blocks(title="Qwen3-TTS Demo", theme=theme) as demo:
         gr.HTML(
             """
             <div class="header-container">
