@@ -900,5 +900,14 @@ def build_ui():
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--share", action="store_true", help="Enable Gradio share=True")
+    args = parser.parse_args()
+    
+    # Also check for COLAB_GPU to automatically enable share in Colab if not specified
+    is_colab = "COLAB_GPU" in os.environ
+    should_share = args.share or is_colab
+
     demo, theme, css = build_ui()
-    demo.launch(theme=theme, css=css)
+    demo.launch(theme=theme, css=css, share=should_share)
