@@ -896,7 +896,7 @@ def build_ui():
                     outputs=[tts_audio_out, tts_status],
                 )
 
-    return demo, theme, css
+    return demo, css
 
 
 if __name__ == "__main__":
