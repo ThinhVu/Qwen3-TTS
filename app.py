@@ -577,7 +577,7 @@ def build_ui():
     }
     """
 
-    with gr.Blocks(title="Qwen3-TTS Demo", theme=theme) as demo:
+    with gr.Blocks(title="Qwen3-TTS Demo") as demo:
         gr.HTML(
             """
             <div class="header-container">
@@ -910,4 +910,4 @@ if __name__ == "__main__":
     should_share = args.share or is_colab
 
     demo, css = build_ui()
-    demo.launch(css=css, share=should_share)
+    demo.launch(share=should_share)
